@@ -15,6 +15,7 @@ def oracle_cdc_metrics(sch, pipeline):
         job = job_builder.build('Test job for {} pipeline'.format(pipeline.name),
                                 pipeline=pipeline)
         job.description = 'CI/CD test job'
+        job.data_collector_labels = ['dean']
         sch.add_job(job)
         sch.start_job(job)
 
